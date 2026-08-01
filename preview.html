@@ -2,7 +2,8 @@
 <html lang="en-GB">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#fbfaf7">
 <title>PREVIEW: Pampered Pets Website Concept</title>
 <meta name="description" content="Pampered Pets is South Croydon's trusted grooming parlour. A decade of patient, caring grooming for dogs and cats of all breeds, rated 4.7 stars by nearly 200 local pet owners. Call 020 8686 5048.">
 <link rel="canonical" href="https://www.pamperedpetscroydon.co.uk/">
@@ -61,10 +62,8 @@
   }
 }
 </script>
-
 <style>
   .preview-banner {
-    position: sticky; top: 0; z-index: 60;
     background: #0f1f19;
     color: #fff;
     font-family: "Nunito Sans", sans-serif;
@@ -79,10 +78,9 @@
     inset: 0;
     z-index: 45;
     pointer-events: none;
-    background-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='340'%20height='200'%3E%3Ctext%20x='-20'%20y='120'%20transform='rotate(-28%20170%20100)'%20font-family='Nunito%20Sans,Arial,sans-serif'%20font-size='34'%20font-weight='700'%20fill='rgba(15,31,25,0.09)'%3EPREVIEW%3C/text%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='340'%20height='200'%3E%3Ctext%20x='-20'%20y='120'%20transform='rotate(-28%20170%20100)'%20font-family='Arial,sans-serif'%20font-size='34'%20font-weight='700'%20fill='rgba(15,31,25,0.09)'%3EPREVIEW%3C/text%3E%3C/svg%3E");
     background-repeat: repeat;
   }
-  #site-header { top: 41px; }
 </style>
 </head>
 <body class="bg-cream-50 text-forest-950 antialiased">
@@ -145,7 +143,7 @@
     <div class="absolute inset-0 opacity-20 mix-blend-overlay">
       <img src="https://images.unsplash.com/photo-1581887936036-3f4f7f0b6679?fm=jpg&q=80&w=2000&auto=format&fit=crop" alt="" class="h-full w-full object-cover" loading="eager">
     </div>
-    <div class="relative mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:items-center lg:px-8 lg:py-24">
+    <div class="relative mx-auto grid max-w-7xl gap-12 px-4 py-12 sm:px-6 sm:py-16 lg:grid-cols-2 lg:items-center lg:px-8 lg:py-24">
       <div>
         <p class="section-eyebrow !bg-white/10 !text-gold-300">✦ South Croydon's Trusted Grooming Parlour</p>
         <h1 class="font-display text-4xl font-semibold leading-tight text-white sm:text-5xl lg:text-6xl">
@@ -154,9 +152,12 @@
         <p class="mt-6 max-w-xl text-lg text-forest-100">
           Pampered Pets has been part of Selsdon Road for around ten years, quietly building one of the area's best grooming reputations. Nearly 200 local pet owners have rated us 4.7 stars, and their dogs and cats keep coming back.
         </p>
-        <div class="mt-8 flex flex-wrap gap-4">
+        <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
           <a href="#contact" class="btn-primary">Book an Appointment</a>
           <a href="tel:02086865048" class="btn-secondary">📞 Call 020 8686 5048</a>
+        </div>
+        <div class="mt-8 overflow-hidden rounded-3xl shadow-2xl ring-2 ring-gold-500/20 lg:hidden">
+          <img src="https://images.unsplash.com/photo-1611173622933-91942d394b04?fm=jpg&q=80&w=800&auto=format&fit=crop" alt="A freshly groomed pomeranian wrapped in a soft towel" class="h-52 w-full object-cover sm:h-64">
         </div>
         <dl class="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-4">
           <div>
@@ -216,7 +217,7 @@
   </section>
 
   <!-- ===== ABOUT ===== -->
-  <section id="about" class="py-20 sm:py-28">
+  <section id="about" class="py-16 sm:py-24">
     <div class="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:items-center lg:px-8">
       <div class="order-2 overflow-hidden rounded-[2rem] shadow-xl lg:order-1">
         <img src="https://images.unsplash.com/photo-1719464454959-9cf304ef4774?fm=jpg&q=80&w=1200&auto=format&fit=crop" alt="A small white dog being carefully trimmed by a groomer" class="h-[420px] w-full object-cover">
@@ -249,7 +250,7 @@
   </section>
 
   <!-- ===== SERVICES ===== -->
-  <section id="services" class="bg-forest-50 py-20 sm:py-28">
+  <section id="services" class="bg-forest-50 py-16 sm:py-24">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="mx-auto max-w-2xl text-center">
         <p class="section-eyebrow">Services &amp; Pricing</p>
@@ -289,7 +290,7 @@
   </section>
 
   <!-- ===== CATS SECTION ===== -->
-  <section id="cats" class="py-20 sm:py-28">
+  <section id="cats" class="py-16 sm:py-24">
     <div class="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:items-center lg:px-8">
       <div>
         <p class="section-eyebrow">🐱 Yes, Cats Too</p>
@@ -309,7 +310,7 @@
   </section>
 
   <!-- ===== GALLERY ===== -->
-  <section id="gallery" class="bg-forest-950 py-20 sm:py-28">
+  <section id="gallery" class="bg-forest-950 py-16 sm:py-24">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="mx-auto max-w-2xl text-center">
         <p class="section-eyebrow !bg-white/10 !text-gold-300">Gallery</p>
@@ -330,7 +331,7 @@
   </section>
 
   <!-- ===== REVIEWS ===== -->
-  <section id="reviews" class="py-20 sm:py-28">
+  <section id="reviews" class="py-16 sm:py-24">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="mx-auto max-w-2xl text-center">
         <p class="section-eyebrow">Reviews</p>
@@ -359,7 +360,7 @@
   </section>
 
   <!-- ===== FAQ ===== -->
-  <section id="faq" class="bg-forest-50 py-20 sm:py-28">
+  <section id="faq" class="bg-forest-50 py-16 sm:py-24">
     <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
       <div class="text-center">
         <p class="section-eyebrow">FAQ</p>
@@ -412,7 +413,7 @@
   </section>
 
   <!-- ===== SERVICE AREA ===== -->
-  <section class="py-20 sm:py-28">
+  <section class="py-16 sm:py-24">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="mx-auto max-w-2xl text-center">
         <p class="section-eyebrow">Service Area</p>
@@ -432,7 +433,7 @@
   </section>
 
   <!-- ===== CONTACT ===== -->
-  <section id="contact" class="bg-gradient-to-br from-forest-900 to-forest-950 py-20 sm:py-28">
+  <section id="contact" class="bg-gradient-to-br from-forest-900 to-forest-950 py-16 sm:py-24">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="mx-auto max-w-2xl text-center">
         <p class="section-eyebrow !bg-white/10 !text-gold-300">Get In Touch</p>
@@ -506,7 +507,7 @@
 </main>
 
 <!-- ===== FOOTER ===== -->
-<footer class="bg-forest-950 py-12 text-forest-300">
+<footer class="bg-forest-950 pt-12 pb-28 text-forest-300 lg:pb-12">
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
     <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
       <div>
@@ -548,6 +549,13 @@
     </div>
   </div>
 </footer>
+
+<div id="mobile-cta" class="fixed inset-x-0 bottom-0 z-50 translate-y-full transition-transform duration-300 lg:hidden">
+  <div class="mx-3 mb-[calc(0.75rem+env(safe-area-inset-bottom))] flex gap-2 rounded-2xl border border-white/10 bg-forest-950/95 p-2 shadow-2xl shadow-forest-950/40 backdrop-blur">
+    <a href="tel:02086865048" class="flex flex-1 items-center justify-center gap-2 rounded-xl border-2 border-white/20 px-4 py-3 text-sm font-bold text-white transition active:scale-[0.98]">📞 Call</a>
+    <a href="#contact" class="flex flex-1 items-center justify-center gap-2 rounded-xl bg-gold-500 px-4 py-3 text-sm font-bold text-forest-950 shadow-lg shadow-gold-500/30 transition active:scale-[0.98]">Book Now</a>
+  </div>
+</div>
 
 <script src="js/main.js"></script>
 <script>

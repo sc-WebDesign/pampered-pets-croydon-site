@@ -32,7 +32,7 @@ if (header) {
   window.addEventListener('scroll', applyShadow, { passive: true });
 }
 
-// FAQ accordion
+// FAQ accordion (the + icon rotates 45 degrees into a close mark)
 document.querySelectorAll('.faq-trigger').forEach((trigger) => {
   trigger.addEventListener('click', () => {
     const panel = trigger.nextElementSibling;
@@ -40,17 +40,56 @@ document.querySelectorAll('.faq-trigger').forEach((trigger) => {
 
     document.querySelectorAll('.faq-trigger').forEach((t) => {
       t.setAttribute('aria-expanded', 'false');
-      t.querySelector('.faq-icon').textContent = '+';
+      t.querySelector('.faq-icon').classList.remove('rotate-45');
       t.nextElementSibling.classList.add('hidden');
     });
 
     if (!isOpen) {
       trigger.setAttribute('aria-expanded', 'true');
-      trigger.querySelector('.faq-icon').textContent = '−';
+      trigger.querySelector('.faq-icon').classList.add('rotate-45');
       panel.classList.remove('hidden');
     }
   });
 });
+
+// Floating mobile CTA bar: appears past the hero, hides at the booking form
+const ctaBar = document.getElementById('mobile-cta');
+if (ctaBar) {
+  const contact = document.getElementById('contact');
+  let nearContact = false;
+  const updateBar = () => {
+    const show = window.scrollY > 350 && !nearContact;
+    ctaBar.classList.toggle('translate-y-full', !show);
+  };
+  window.addEventListener('scroll', updateBar, { passive: true });
+  if (contact && 'IntersectionObserver' in window) {
+    new IntersectionObserver((entries) => {
+      nearContact = entries[0].isIntersecting;
+      updateBar();
+    }, { threshold: 0.15 }).observe(contact);
+  }
+  updateBar();
+}
+
+// Scroll-reveal for cards, headings and FAQ rows (skipped for reduced-motion users)
+const revealTargets = document.querySelectorAll('.card, #reviews blockquote, .faq-item, main section h2, main section .section-eyebrow');
+if (revealTargets.length && 'IntersectionObserver' in window &&
+    !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  revealTargets.forEach((el) => {
+    el.classList.add('js-reveal');
+    const siblings = Array.from(el.parentElement.children);
+    el.style.transitionDelay = `${(siblings.indexOf(el) % 4) * 70}ms`;
+  });
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  revealTargets.forEach((el) => io.observe(el));
+}
 
 // Footer year
 const yearEl = document.getElementById('year');
